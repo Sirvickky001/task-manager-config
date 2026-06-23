@@ -9,6 +9,10 @@ service:
   type: ClusterIP
   port: 3000
 
+ingress:
+  enabled: true
+  host: taskflow.local
+
 resources:
   requests:
     cpu: 50m
