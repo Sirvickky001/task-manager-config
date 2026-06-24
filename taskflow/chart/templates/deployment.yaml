@@ -46,6 +46,10 @@ spec:
               memory: {{ .Values.resources.limits.memory }}
   strategy:
     canary:
+      analysis:
+        templates:
+          - templateName: taskflow-health-check
+        startingStep: 1
       steps:
         - setWeight: 5
         - pause: {duration: 30s}

@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: taskflow-health-check
+spec:
+  metrics:
+    - name: health-check
+      interval: 10s
+      successCondition: result == "ok"
+      failureLimit: 3
+      provider:
+        web:
+          url: "http://taskflow.{{ .Release.Namespace }}.svc.cluster.local:3000/health"
+          jsonPath: "{$.status}"
