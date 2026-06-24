@@ -9,6 +9,10 @@ service:
   type: ClusterIP
   port: 3000
 
+ingress:
+  enabled: false
+  host: ""
+
 resources:
   requests:
     cpu: 50m
