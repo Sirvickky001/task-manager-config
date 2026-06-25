@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: taskflow
+  namespace: monitoring
   labels:
     app: taskflow
     release: monitoring
